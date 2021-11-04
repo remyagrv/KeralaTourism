@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 .login{
-    background-image: url("/images/mohiniyattam_dance.jpg");
+    background-image: url("./images/mohiniyattam_dance.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
