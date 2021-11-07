@@ -6,3 +6,14 @@ function myFunction() {
     x.type = "password";
   }
 }
+function validate(){  
+  // let username = document.getElementById("usernm");  
+  let password = document.getElementById("myInput");  
+    if(password.length<6){  
+    alert("Password must be at least 6 characters long.");  
+    return false; 
+    } 
+    else{
+      return true;
+    }
+  }

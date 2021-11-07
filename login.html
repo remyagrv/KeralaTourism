@@ -33,12 +33,12 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="./index.html" onsubmit="return validate()">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="username">
+                                <input type="text" class="form-control" required placeholder="username" id="usernm">
                                 
                             </div>
                             <div class="input-group form-group">
@@ -47,7 +47,7 @@
                                    
                                 </div>
                                 
-                                <input type="password" class="form-control" placeholder="password" id="myInput">
+                                <input type="password" class="form-control" required placeholder="password" id="myInput">
                                 
                               
                             </div>
