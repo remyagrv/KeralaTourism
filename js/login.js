@@ -12,17 +12,22 @@ function validate(){
   let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
   let pwdreg = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     
-  if(password.value.length < 8)
-    {
-      alert("Password must be at least 8 characters long."); 
-      return false; 
-    }
-  else if ((regex.test(email.value))&&(pwdreg.test(password.value)))
+  
+  
+
+  if ((regex.test(email.value))&&(pwdreg.test(password.value))&&(password.value.length > 8))
   {
       
-      return true;
-  } else {
-     alert("Incorrect Email and Password");
+    return true;
+}
+   
+  else  if(password.value.length < 8)
+  {
+    alert("Password must be at least 8 characters long."); 
+    return false; 
+  }
+  else {
+     alert("Incorrect Email or Password");
       return false;
   }
   
