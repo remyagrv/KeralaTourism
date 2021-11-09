@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./js/signup.js"></script>
     <title>Kerala Tourism</title>
 
 </head>
@@ -28,23 +29,24 @@
                
             </div>
             <div class="col-sm-6">
-                <form action="r" method="post" accept-charset="utf-8" class="form" role="form">
+                <form action="./index.html" accept-charset="utf-8" class="form" role="form">
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name"  />                        </div>
+                            <input type="text" id="fname" required name="firstname" value="" class="form-control input-lg" placeholder="First Name"  />                        </div>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  />                        </div>
+                            <input type="text" id="lname"required name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  />                        </div>
                     </div>
-                    <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  />
-                    <input type="number" name="mobile_number" value="" class="form-control input-lg" placeholder="Mobile Number"  />
-                    <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />
-                    <input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password"  />
+                    <input type="text" name="email" id="email" required value="" class="form-control input-lg" placeholder="Your Email"  />
+                    <input type="number" name="mobile_number" required value="" class="form-control input-lg" placeholder="Mobile Number"  />
+                    <input type="password" name="password" value="" required class="form-control input-lg" placeholder="Password"  />
+                    <input type="password" name="confirm_password" required value="" class="form-control input-lg" placeholder="Confirm Password"  />
                     
                         
                         
                         <br />
-                    <span class="help-block"> <input type="checkbox"> I accept the Terms of use and Privacy policy.</span>
-                    <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Submit</button>
+                    <span class="help-block"> <input type="checkbox" required> I accept the Terms of use and Privacy policy.</span>
+                    <button class="btn btn-lg btn-primary btn-block signup-btn" onclick="return registrationValid();" type="submit">Submit</button>
+                    <p style="color:darkgrey;">*Password should contain minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number and one special character.</p>
                 </form>          
             </div>
           </div>
