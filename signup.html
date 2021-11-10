@@ -4,6 +4,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
@@ -11,6 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./js/signup.js"></script>
     <title>Kerala Tourism</title>
+    <style>
+        .passwordInput{
+            margin-top: 5%; 
+            text-align :center;
+        }
+
+        .displayBadge{
+            margin-top: 5%; 
+            display: none; 
+            text-align :center;
+        }
+    </style>
 
 </head>
 <body class="signup" style="background-image: url(./images/signup2.jpg)">
@@ -37,10 +50,15 @@
                             <input type="text" id="lname"required name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  />                        </div>
                     </div>
                     <input type="text" name="email" id="email" required value="" class="form-control input-lg" placeholder="Your Email"  />
-                    <input type="number" name="mobile_number" required value="" class="form-control input-lg" placeholder="Mobile Number"  />
-                    <input type="password" name="password" value="" required class="form-control input-lg" placeholder="Password"  />
-                    <input type="password" name="confirm_password" required value="" class="form-control input-lg" placeholder="Confirm Password"  />
-                    
+                    <input type="text" name="mobile_number" id="phn" required value="" class="form-control input-lg" placeholder="Mobile Number"  />
+                    <input type="password" id="password"  name="password" value="" required class="form-control input-lg" placeholder="Password"  />
+                    <br>
+                    <span id="StrengthDisp" class="badge displayBadge">Weak</span>
+                    <br>
+                    <input type="password" id="cpassword" name="confirm_password" required value="" class="form-control input-lg" placeholder="Confirm Password"  />
+                    <br>
+        <span id="StrengthDisp" class="badge displayBadge">Weak</span>
+        <br> 
                         
                         
                         <br />
