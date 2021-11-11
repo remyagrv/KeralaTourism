@@ -41,18 +41,52 @@ function registrationValid()
 }
 function passwordChanged() {
     var strength = document.getElementById('strength');
-    var strongRegex = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
-    var mediumRegex = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))');
-    
+    var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+    var enoughRegex = new RegExp("(?=.{8,}).*", "g");
     var pwd = document.getElementById("pass");
     if (pwd.value.length == 0) {
         strength.innerHTML = 'Type Password';
-    
+    } else if (false == enoughRegex.test(pwd.value)) {
+        strength.innerHTML = 'More Characters';
     } else if (strongRegex.test(pwd.value)) {
-        strength.innerHTML = '<span style="background-color:green" >Strong!</span>';
+        strength.innerHTML = '<span class="badge progress-bar-success">Strong!</span>';
     } else if (mediumRegex.test(pwd.value)) {
-        strength.innerHTML = '<span style="background-color:orange">Medium!</span>';
+        strength.innerHTML = '<span class= "badge progress-bar-warning">Medium!</span>';
     } else {
-        strength.innerHTML = '<span style="background-color:red">Weak!</span>';
+        strength.innerHTML = '<span class= "badge progress-bar-danger">Weak!</span>';
     }
 }
+
+    // var strengthc = document.getElementsById('strengthc');
+    // var pwdc = document.getElementsById("cpass");
+    // if (pwdc.value.length == 0) {
+    //     strengthc.innerHTML = 'Type Password';
+    // } else if (false == enoughRegex.test(pwdc.value)) {
+    //     strengthc.innerHTML = 'More Characters';
+    // } else if (strongRegex.test(pwdc.value)) {
+    //     strengthc.innerHTML = '<span class="badge progress-bar-success">Strong!</span>';
+    // } else if (mediumRegex.test(pwdc.value)) {
+    //     strengthc.innerHTML = '<span class= "badge progress-bar-warning">Medium!</span>';
+    // } else {
+    //     strengthc.innerHTML = '<span class= "badge progress-bar-danger">Weak!</span>'; 
+    // }
+    function passwordConfirm() {
+        var strengthc = document.getElementById('strengthc');
+        var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+        var cpwd = document.getElementById("cpass");
+        if (cpwd.value.length == 0) {
+            strengthc.innerHTML = 'Type Password';
+        } else if (false == enoughRegex.test(cpwd.value)) {
+            strengthc.innerHTML = 'More Characters';
+        } else if (strongRegex.test(cpwd.value)) {
+            strengthc.innerHTML = '<span class="badge progress-bar-success">Strong!</span>';
+        } else if (mediumRegex.test(cpwd.value)) {
+            strengthc.innerHTML = '<span class= "badge progress-bar-warning">Medium!</span>';
+        } else {
+            strengthc.innerHTML = '<span class= "badge progress-bar-danger">Weak!</span>';
+        }
+    }
+    

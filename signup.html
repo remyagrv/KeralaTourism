@@ -41,11 +41,13 @@
                     <input type="text" name="email" id="email" required value="" class="form-control input-lg" placeholder="Your Email"  />
                     <input type="text" name="mobile_number" id="phn" required value="" class="form-control input-lg" placeholder="Mobile Number"  />
                     <input type="password" id="pass"  name="password" value="" required class="form-control input-lg" placeholder="Password" onkeyup="return passwordChanged();"  />
+                    
+                    <span id="strength" class="badge displayBadge" >Weak</span>
+                    
                     <br>
-                    <span id="strength" class="badge displayBadge"  width=500px>Weak</span>
                     <br>
-                    <br>
-                    <input type="password" id="cpass" name="confirm_password" required value="" class="form-control input-lg" placeholder="Confirm Password"  />
+                    
+                    <input type="password" id="cpass" name="confirm_password" required value="" class="form-control input-lg" placeholder="Confirm Password" onkeyup="return passwordConfirm();" />
                     <br>
         <span id="strengthc" class="badge displayBadge">Weak</span>
         <br> 
